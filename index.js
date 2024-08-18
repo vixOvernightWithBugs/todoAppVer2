@@ -323,7 +323,9 @@ tasks.prototype.toggleCompleted = function (id) {
       task.completed = filterState.UNDONE
     }
     localStorage.setItem('listTask', JSON.stringify(this.listTask ))
-    this.loadTask()     
+    this.loadTask() 
+    filterStatus.value = filterState.ALL;
+    filterStatus.dispatchEvent(new Event('change'));    
   } 
 }
 
